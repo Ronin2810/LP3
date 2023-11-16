@@ -43,8 +43,24 @@ def place_queens_with_first_queen(board, n, first_queen_row):
     # Solve for the remaining Queens starting from the second column (column index 1)
     solve_n_queens(board, 0, n)
 
-# Example usage:
-n = 7  # Change this to the desired number of Queens
+# # Example usage:
+# n = 7  # Change this to the desired number of Queens
+# first_queen_row = 1  # Change this to the desired row for the first Queen
+# board = [[0] * n for _ in range(n)]
+# place_queens_with_first_queen(board, n, first_queen_row)
+
+
+# Input handling
+while True:
+    try:
+        n = int(input("Enter the number of Queens: "))
+        if n <= 0:
+            print("Please enter a positive integer. Try again.")
+        else:
+            break
+    except ValueError:
+        print("Invalid input. Please enter an integer. Try again.")
+
 first_queen_row = 1  # Change this to the desired row for the first Queen
 board = [[0] * n for _ in range(n)]
 place_queens_with_first_queen(board, n, first_queen_row)

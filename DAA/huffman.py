@@ -68,7 +68,7 @@ def huffman_decoding(encoded_text, huffman_codes):
     return decoded_text
 
 # Example usage:
-text = "hello, world!"
+text = input("Enter String:\n")
 encoded_text, huffman_codes = huffman_encoding(text)
 print(f"Encoded text: {encoded_text}")
 decoded_text = huffman_decoding(encoded_text, huffman_codes)

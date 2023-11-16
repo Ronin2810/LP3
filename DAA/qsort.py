@@ -35,11 +35,29 @@ def sort_array(arr, randomized=False):
     quick_sort(copy_arr, 0, len(copy_arr) - 1, randomized)
     return copy_arr
 
-# Example usage:
-arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+# # Example usage:
+# arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 
-choice = int(input("Enter 0 for deterministic Quick Sort, 1 for randomized Quick Sort: "))
-randomized = choice == 1
+# choice = int(input("Enter 0 for deterministic Quick Sort, 1 for randomized Quick Sort: "))
+# randomized = choice == 1
 
-sorted_arr = sort_array(arr, randomized)
-print("Sorted Array:", sorted_arr)
+# sorted_arr = sort_array(arr, randomized)
+# print("Sorted Array:", sorted_arr)
+
+
+def get_array_input():
+    while True:
+        try:
+            arr = list(map(int, input("Enter space-separated integers in the array: ").split()))
+            return arr
+        except ValueError:
+            print("Invalid input. Please enter integers separated by space. Try again.")
+
+if __name__ == "__main__":
+    arr = get_array_input()
+
+    choice = int(input("Enter 0 for deterministic Quick Sort, 1 for randomized Quick Sort: "))
+    randomized = choice == 1
+
+    sorted_arr = sort_array(arr, randomized)
+    print("Sorted Array:", sorted_arr)

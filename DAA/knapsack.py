@@ -19,12 +19,30 @@ def knapsack(weights, values, capacity):
 
     return dp[n][capacity], selected_items[::-1]
 
-# Example usage:
-weights = [2, 3, 4, 5]
-values = [3, 4, 5, 6]
-# weights = [2,5,1]
-# values = [10,20,5]
-capacity = 10
-max_value, selected_items = knapsack(weights, values, capacity)
-print(f"Maximum value achievable: {max_value}")
-print(f"Selected items: {selected_items}")
+# # Example usage:
+# weights = [2, 3, 4, 5]
+# values = [3, 4, 5, 6]
+# # weights = [2,5,1]
+# # values = [10,20,5]
+# capacity = 10
+# max_value, selected_items = knapsack(weights, values, capacity)
+# print(f"Maximum value achievable: {max_value}")
+# print(f"Selected items: {selected_items}")
+
+
+def get_input():
+    while True:
+        try:
+            weights = list(map(int, input("Enter weights separated by space: ").split()))
+            values = list(map(int, input("Enter values separated by space: ").split()))
+            capacity = int(input("Enter knapsack capacity: "))
+            return weights, values, capacity
+        except ValueError:
+            print("Invalid input. Please enter integers only. Try again.")
+
+
+if __name__ == "__main__":
+    weights, values, capacity = get_input()
+    max_value, selected_items = knapsack(weights, values, capacity)
+    print("Maximum value:", max_value)
+    print("Selected items:", selected_items)
